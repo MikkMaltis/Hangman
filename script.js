@@ -1,5 +1,9 @@
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÕÄÖÜ'.split('');
 const word = 'AMETIKOOL'.split('');
-let guess = [...Array(word.length).keys().map(i => '_')];
+
+let guess = [...Array(word.length).keys()].map(i => '_');
+
+const wordDiv = document.getElementById('word');
 
 for ( let i in guess ) {
     const letterDiv = document.createElement('div');
@@ -8,11 +12,15 @@ for ( let i in guess ) {
     wordDiv.appendChild(letterDiv);
 }
 
-document.addEventListener('keydown'), (event) => {
-    const letter = event.key.toUpperCase();
-    const index = word.indexOf(letter);
-    if ( index > -1 ) {
-        guess[index] = letter;
-        document.getElementById('letter' + index).innerText = letter;
+document.addEventListener('keyup', e => {
+    if ( alphabet.includes(e.key.toUpperCase()) ) {
+        if ( word.includes(g) ) {
+            for ( let i in word) {
+                if ( word[i] == g) {
+                    const letterDiv = document.getElementById('letter_' + i);
+                }
+            }
+        }
+    console.log(e.key);
     }
-}
+});
